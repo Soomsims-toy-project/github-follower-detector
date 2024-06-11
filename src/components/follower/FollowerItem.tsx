@@ -1,24 +1,24 @@
-import Image from 'next/image';
+import Image, { ImageLoaderProps } from 'next/legacy/image';
 
 import FollowerButton from './FollowerButton';
 
-interface IFollowerItem {
-  githubID: string;
+interface FollowerItemProps {
+  userName: string;
+  imageURL: string;
 }
 
-function FollowerItem({ githubID }: IFollowerItem) {
+const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
+};
+
+function FollowerItem({ userName, imageURL }: FollowerItemProps) {
   return (
-    <div className="flex h-40 items-center gap-36 border-b-2">
+    <div className="flex h-40 w-[36rem] items-center justify-between border-b-2 border-light_grey">
       <div className="flex items-center gap-6">
         <div className="overflow-hidden rounded-full">
-          <Image
-            src={'https://avatars.githubusercontent.com/u/127329855?v=4'}
-            alt="프로필 사진 이미지"
-            width={48}
-            height={48}
-          />
+          <Image loader={imageLoader} src={imageURL} alt="프로필 사진 이미지" width={48} height={48} priority />
         </div>
-        <h3 className="text-2xl">{githubID}</h3>
+        <h3 className="text-2xl">{userName}</h3>
       </div>
       <FollowerButton className="border-blue bg-light_blue text-blue" text={'예시 버튼'} />
     </div>

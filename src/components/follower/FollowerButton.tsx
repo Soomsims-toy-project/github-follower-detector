@@ -1,13 +1,13 @@
 import React, { ElementType, MouseEventHandler } from 'react';
 
-interface IFollowerButton {
+interface FollowerButtonProps {
   as?: ElementType;
   text: string;
   onClick?: MouseEventHandler;
   className?: string;
 }
 
-function FollowerButton({ as, text, onClick, className }: IFollowerButton) {
+function FollowerButton({ as, text, onClick, className }: FollowerButtonProps) {
   const Comp = as ?? 'button';
 
   return (

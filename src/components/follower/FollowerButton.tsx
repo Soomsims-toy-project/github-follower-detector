@@ -1,7 +1,6 @@
-import React, { ElementType, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 
 interface FollowerButtonProps {
-  as?: ElementType;
   text: string;
   onClick?: MouseEventHandler;
   className?: string;

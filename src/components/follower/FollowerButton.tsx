@@ -7,13 +7,11 @@ interface FollowerButtonProps {
   className?: string;
 }
 
-function FollowerButton({ as, text, onClick, className }: FollowerButtonProps) {
-  const Comp = as ?? 'button';
-
+function FollowerButton({ text, onClick, className }: FollowerButtonProps) {
   return (
-    <Comp className={`rounded-lg border px-3 py-2 text-xl ${className}`} onClick={onClick}>
+    <button className={`rounded-lg border px-3 py-2 text-center text-xl ${className}`} onClick={onClick}>
       {text}
-    </Comp>
+    </button>
   );
 }
 

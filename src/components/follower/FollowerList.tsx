@@ -14,7 +14,7 @@ interface FollowerListProps {
 
 function FollowerList({ title, number, followerInfoList, className }: FollowerListProps) {
   return (
-    <div className="flex flex-col rounded-xl border-4 py-12">
+    <div className="flex flex-col rounded-xl bg-dark_grey py-12">
       <h1 className="mb-12 text-center text-4xl">
         {title} <span className={className}>{number}</span> 명
       </h1>

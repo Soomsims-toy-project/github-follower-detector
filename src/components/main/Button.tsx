@@ -10,7 +10,7 @@ const MainButton = ({ className, text, onClick }: MainButtonProps) => {
   return (
     <button
       type="button"
-      className={`rounded-[15px] p-[1rem] text-center text-2xl font-bold ${className}`}
+      className={`rounded-[10px] p-[1rem] text-center text-2xl font-bold ${className}`}
       onClick={onClick}>
       {text}
     </button>

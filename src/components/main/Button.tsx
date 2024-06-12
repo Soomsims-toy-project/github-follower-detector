@@ -8,7 +8,10 @@ interface MainButtonProps {
 
 const MainButton = ({ className, text, onClick }: MainButtonProps) => {
   return (
-    <button type="button" className={`rounded-lg p-3 text-center text-2xl font-bold ${className}`} onClick={onClick}>
+    <button
+      type="button"
+      className={`rounded-[15px] p-[1rem] text-center text-2xl font-bold ${className}`}
+      onClick={onClick}>
       {text}
     </button>
   );

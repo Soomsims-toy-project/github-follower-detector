@@ -2,24 +2,7 @@ import FollowerList from '@/components/follower/FollowerList';
 import UserProfile from '@/components/follower/UserProfile';
 
 import { mockData } from './_data/mock';
-
-interface Follower {
-  userName: string;
-  imageURL: string;
-}
-
-interface UserProfileData {
-  userName: string;
-  description: string;
-  imageURL: string;
-  follower: number;
-  following: number;
-}
-
-interface FollowerPageProps {
-  userProfileData: UserProfileData;
-  initialFollowerData: Follower[];
-}
+import { FollowerPageProps } from './_types';
 
 export async function getServerSideProps() {
   // userProfileData: 서버 사이드에서 데이터를 미리 받아옴 userProfile은 동적으로 계속 바뀌지 않으므로

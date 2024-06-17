@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { ChangeEvent, useState } from 'react';
+import { useRef, useState } from 'react';
 
 function MainPage() {
+  const tokenRef = useRef<HTMLInputElement | null>(null);
   const [token, setToken] = useState('');
 
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setToken(e.target.value);
+  const onChangeInput = () => {
+    tokenRef.current && setToken(tokenRef.current.value);
   };
 
   const onClickFollowList = () => {
@@ -23,6 +24,7 @@ function MainPage() {
         </Link>
         <p className={`mb-[3rem] text-[1.5rem]`}>﹒ 토큰 발급 시 권한 user(Update ALL user data)를 체크해주세요!</p>
         <input
+          ref={tokenRef}
           onChange={onChangeInput}
           className={`black mb-[4rem] h-[4.5rem] rounded-[10px] p-5 text-[1.5rem] text-grey`}
           placeholder="Github Token을 입력해주세요."

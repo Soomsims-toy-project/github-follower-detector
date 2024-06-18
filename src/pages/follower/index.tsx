@@ -27,7 +27,7 @@ const FollowerPage = ({ userProfileData, initialFollowerData }: FollowerPageProp
   // Todo: followerData 팔로우 언팔로우에 따라 csr로 상태 관리 (react-query 사용)
 
   return (
-    <main className="flex min-h-screen flex-grow flex-col items-center bg-grey">
+    <main className="flex min-h-full flex-grow flex-col items-center bg-grey">
       <section className="mt-8">
         <UserProfile
           userName={userProfileData.userName}

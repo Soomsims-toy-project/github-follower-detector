@@ -13,6 +13,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       </header>
       {children}
     </div>
+
   );
 }
 

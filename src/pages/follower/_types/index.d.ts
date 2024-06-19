@@ -1,17 +1,17 @@
-interface Follower {
-  userName: string;
-  imageURL: string;
+interface FollowerProps {
+  name: string;
+  avatar_url: string;
 }
 
-interface UserProfileData {
-  userName: string;
-  description: string;
-  imageURL: string;
-  follower: number;
+export interface UserProfileDataProps {
+  name: string;
+  bio: string;
+  avatar_url: string;
+  followers: number;
   following: number;
 }
 
 export interface FollowerPageProps {
-  userProfileData: UserProfileData;
-  initialFollowerData: Follower[];
+  userProfileData: UserProfileDataProps;
+  initialFollowerData: FollowerProps[];
 }

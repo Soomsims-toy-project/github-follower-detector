@@ -17,7 +17,7 @@ function UserProfile({ userName, description, imageURL, follower, following }: U
     <div className="flex w-[88rem] items-center justify-between rounded-2xl bg-dark_grey px-24 py-16">
       <div className="flex gap-24">
         <div className="overflow-hidden rounded-full">
-          <Image loader={imageLoader} src={imageURL} alt="프로필 사진 이미지" width={144} height={144} />
+          <Image loader={imageLoader} src={imageURL} alt="프로필 사진 이미지" width={144} height={144} priority />
         </div>
         <div className="flex flex-col gap-12">
           <h1 className="text-7xl">{userName}</h1>

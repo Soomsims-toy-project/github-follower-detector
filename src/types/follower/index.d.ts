@@ -15,3 +15,10 @@ export interface FollowerPageProps {
   userProfileData: UserProfileDataProps;
   initialFollowerData: FollowerProps[];
 }
+
+export interface UserProps {
+  login: string;
+  id: number;
+  avatar_url: string;
+  url: string;
+}

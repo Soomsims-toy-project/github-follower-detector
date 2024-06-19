@@ -1,28 +1,28 @@
+import { UserProps } from '@/types/follower';
+
 import FollowerItem from './FollowerItem';
 
-interface FollowerInfo {
-  userName: string;
-  imageURL: string;
-}
-
 interface FollowerListProps {
-  title: string;
   number: number;
-  followerInfoList: FollowerInfo[];
+  followerInfoList: UserProps[];
   className?: string;
+  type: 'follow' | 'unfollow';
 }
 
-function FollowerList({ title, number, followerInfoList, className }: FollowerListProps) {
+function FollowerList({ number, followerInfoList, type }: FollowerListProps) {
+  const numberStyle = type === 'unfollow' ? 'text-mid_red' : 'text-mid_blue';
+  const title = type === 'unfollow' ? '맞팔이 아닌 사용자 수' : '맞팔중인 사용자 수';
+
   return (
-    <div className="flex flex-col rounded-xl bg-dark_grey py-12">
+    <div className="flex w-[42rem] flex-col rounded-xl bg-dark_grey py-12">
       <h1 className="mb-12 text-center text-4xl">
-        {title} <span className={className}>{number}</span> 명
+        {title} <span className={numberStyle}>{number}</span> 명
       </h1>
       <div className="max-h-[40rem] overflow-y-auto px-12">
         <ul>
           {followerInfoList.map((follower) => (
-            <li key={follower.userName}>
-              <FollowerItem userName={follower.userName} imageURL={follower.imageURL} />
+            <li key={follower.login}>
+              <FollowerItem name={follower.login} imageURL={follower.avatar_url} type={type} />
             </li>
           ))}
         </ul>

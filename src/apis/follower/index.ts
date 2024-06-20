@@ -11,13 +11,11 @@ const API_URL = {
 
 export const getUserProfile = async () => {
   const { data } = await client.get(API_URL.GET_USER_PROFILE);
-  console.log(data);
   return data;
 };
 
 export const getFollowers = async (name: string) => {
   const { data } = await client.get(API_URL.GET_FOLLOWERS(name));
-  console.log(data);
   return data;
 };
 

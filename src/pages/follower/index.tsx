@@ -7,7 +7,6 @@ import { UserProfileDataProps } from '../../types/follower';
 
 const FollowerPage = () => {
   const userProfile = useUserProfile();
-  console.log('userprofile', userProfile);
   const { name, login, bio, avatar_url, followers, following } = (userProfile?.data as UserProfileDataProps) || {};
   const { data: followerList = [] } = useGetFollowers(login);
   const { data: followingList = [] } = useGetFollowing(login);

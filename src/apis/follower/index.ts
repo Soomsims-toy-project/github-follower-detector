@@ -1,3 +1,4 @@
+// 코드리뷰를 위해 새로운 브랜치 생성, 주석 추가를 통해 변경점을 만들고 pr날림
 import { client } from '@/apis/client';
 
 const API_URL = {

@@ -1,5 +1,5 @@
-import { queryClient } from '@/apis/queryClient';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { queryClient } from '@/apis/queryClient';
 
 import { followUser, getFollowers, getFollowing, getUserProfile, unfollowUser } from '.';
 

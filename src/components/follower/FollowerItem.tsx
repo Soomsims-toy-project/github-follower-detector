@@ -1,6 +1,5 @@
-import { useFollowUser, useUnfollowUser } from '@/apis/follower/queries';
-
 import Image, { ImageLoaderProps } from 'next/legacy/image';
+import { useFollowUser, useUnfollowUser } from '@/apis/follower/queries';
 
 import FollowerButton from './FollowerButton';
 

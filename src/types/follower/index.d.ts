@@ -9,6 +9,7 @@ export interface UserProfileDataProps {
   avatar_url: string;
   followers: number;
   following: number;
+  login: string;
 }
 
 export interface FollowerPageProps {
